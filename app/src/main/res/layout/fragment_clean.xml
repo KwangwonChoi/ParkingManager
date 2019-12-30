@@ -1,40 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Controllers.Fragments.CleanFragment">
 
     <TextView
         android:id="@+id/clean_selected_car_number"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_blank_fragment"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:text="@string/hello_blank_fragment" />
 
-    <ListView
-        android:id="@+id/clean_car_list_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/clean_selected_car_number"
-        tools:layout_editor_absoluteX="0dp" />
 
     <LinearLayout
-        android:id="@+id/clean_btn_linear_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/clean_list_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="8"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent">
+        android:layout_below="@id/clean_selected_car_number">
 
-        <Button
-            android:id="@+id/clean_btn"
+        <ListView
+            android:id="@+id/clean_car_list_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="차량 정리"/>
+            android:layout_weight="1">
+
+        </ListView>
+
+        <ListView
+            android:id="@+id/clean_car_selected_list_view"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
     </LinearLayout>
 
+    <Button
+        android:id="@+id/clean_btn"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="차량 정리"/>
 
-</android.support.constraint.ConstraintLayout>
+
+</LinearLayout>
